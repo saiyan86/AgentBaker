@@ -81,13 +81,6 @@ function Get-ContainerImages {
                 "mcr.microsoft.com/oss/kubernetes-csi/azurefile-csi:v1.0.0")
             Write-Log "Pulling images for windows server 2019"
         }
-        '2004' {
-            $imagesToPull = @(
-                "mcr.microsoft.com/windows/servercore:2004",
-                "mcr.microsoft.com/windows/nanoserver:2004",
-                "mcr.microsoft.com/oss/kubernetes/pause:1.4.1")
-            Write-Log "Pulling images for windows server core 2004"
-        }
         default {
             Write-Log "No valid windows SKU is specified $windowsSKU"
             exit 1
@@ -336,7 +329,7 @@ if (-not ($validContainerRuntimes -contains $containerRuntime)) {
 }
 
 $windowsSKU = $env:WindowsSKU
-$validSKU = @('2019', '2019-containerd', '2004')
+$validSKU = @('2019', '2019-containerd')
 if (-not ($validSKU -contains $windowsSKU)) {
     Write-Host "Unsupported windows image SKU: $windowsSKU"
     exit 1

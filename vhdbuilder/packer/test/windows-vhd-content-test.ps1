@@ -189,13 +189,6 @@ function Test-ImagesPulled {
                 "mcr.microsoft.com/oss/kubernetes-csi/azurefile-csi:v1.0.0")
             Write-Output "Pulling images for windows server 2019"
         }
-        '2004' {
-            $imagesToPull = @(
-                "mcr.microsoft.com/windows/servercore:2004",
-                "mcr.microsoft.com/windows/nanoserver:2004",
-                "mcr.microsoft.com/oss/kubernetes/pause:1.4.1")
-            Write-Output "Pulling images for windows server core 2004"
-        }
         default {
             Write-Output "No valid windows SKU is specified $WindowsSKU"
             exit 1
