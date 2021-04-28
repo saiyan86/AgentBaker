@@ -107,6 +107,7 @@ function Get-ContainerImages {
                 "mcr.microsoft.com/windows/servercore:ltsc2019",
                 "mcr.microsoft.com/windows/nanoserver:1809",
                 "mcr.microsoft.com/oss/kubernetes/pause:1.4.1",
+                "mcr.microsoft.com/oss/kubernetes/pause:3.4.1",
                 "mcr.microsoft.com/oss/kubernetes-csi/livenessprobe:v2.0.1-alpha.1-windows-1809-amd64",
                 "mcr.microsoft.com/oss/kubernetes-csi/livenessprobe:v2.2.0",
                 "mcr.microsoft.com/oss/kubernetes-csi/csi-node-driver-registrar:v1.2.1-alpha.1-windows-1809-amd64",
@@ -122,14 +123,17 @@ function Get-ContainerImages {
                 "mcr.microsoft.com/oss/kubernetes-csi/azuredisk-csi:v1.1.1",
                 "mcr.microsoft.com/oss/kubernetes-csi/azurefile-csi:v1.0.0",
                 "mcr.microsoft.com/oss/kubernetes-csi/secrets-store/driver:v0.0.21",
-                "mcr.microsoft.com/oss/azure/secrets-store/provider-azure:0.0.14")
+                "mcr.microsoft.com/oss/azure/secrets-store/provider-azure:0.0.14"
+            )
             Write-Log "Pulling images for windows server 2019"
         }
         '2004' {
             $imagesToPull = @(
                 "mcr.microsoft.com/windows/servercore:2004",
                 "mcr.microsoft.com/windows/nanoserver:2004",
-                "mcr.microsoft.com/oss/kubernetes/pause:1.4.1")
+                "mcr.microsoft.com/oss/kubernetes/pause:1.4.1",
+                "mcr.microsoft.com/oss/kubernetes/pause:3.4.1"
+            )
             Write-Log "Pulling images for windows server core 2004"
         }
         default {
